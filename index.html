@@ -1,14 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpha Clash</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.1/dist/full.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .font-anton {
+            font-family: "Anton", sans-serif;
+        }
+
+        .font-poppins {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
 
 </head>
+
 <body>
-    
+    <main class="bg-[#1E1E1E] min-h-screen bg-[url(images/background.png)] bg-no-repeat bg-center">
+        <!-- home section -->
+        <section id="home-section">
+            <div class="flex flex-col justify-center items-center min-h-screen space-y-3">
+                <h2 class="text-white font-anton font-normal text-[140px]">ALPHABET CLASH</h2>
+                <p class="text-white pb-7">Unleash your keyboard kungfu : Press "Enter" to play</p>
+                <button onclick="play()" id="home-btn" class="bg-white text-black btn">Play Now</button>
+            </div>
+        </section>
+        <!-- playground section -->
+        <section id="playground-section" class="playground space-y-10 hidden">
+            <!-- screen -->
+            <div class="flex flex-col justify-center items-center">
+                <div class="artboard artboard-horizontal phone-6 border-[20px] border-[#010313CC] bg-[#ffffffB3] mt-10">
+                    <div class="flex justify-center">
+                        <p class="bg-[#010313CC]  text-white inline-block px-6 pb-4 rounded-b-xl">Don't watch keyboard  while playing...</p>
+                    </div>
+                    <div class="flex justify-center items-center h-full">
+                        <p id="display" class="text-black text-9xl font-bold uppercase">Y</p>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- keyboard-->
+            <div class="">
+                <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="q" class="kbd">q</kbd>
+                    <kbd id="w" class="kbd">w</kbd>
+                    <kbd id="e" class="kbd">e</kbd>
+                    <kbd id="r" class="kbd">r</kbd>
+                    <kbd id="t" class="kbd">t</kbd>
+                    <kbd id="y" class="kbd">y</kbd>
+                    <kbd id="u" class="kbd">u</kbd>
+                    <kbd id="i" class="kbd">i</kbd>
+                    <kbd id="o" class="kbd">o</kbd>
+                    <kbd id="p" class="kbd">p</kbd>
+                </div>
+                <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id= "a" class="kbd">a</kbd>
+                    <kbd id= "s" class="kbd">s</kbd>
+                    <kbd id= "d" class="kbd">d</kbd>
+                    <kbd id= "f" class="kbd">f</kbd>
+                    <kbd id= "g" class="kbd">g</kbd>
+                    <kbd id= "h" class="kbd">h</kbd>
+                    <kbd id= "j" class="kbd">j</kbd>
+                    <kbd id= "k" class="kbd">k</kbd>
+                    <kbd id= "l" class="kbd">l</kbd>
+                </div>
+                <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="z" class="kbd">z</kbd>
+                    <kbd id="x" class="kbd">x</kbd>
+                    <kbd id="c" class="kbd">c</kbd>
+                    <kbd id="v" class="kbd">v</kbd>
+                    <kbd id="b" class="kbd">b</kbd>
+                    <kbd id="n" class="kbd">n</kbd>
+                    <kbd id="m" class="kbd">m</kbd>
+                    <kbd id="/" class="kbd">/</kbd>
+                </div>
+            </div>
+            <!-- life & score -->
+            <div class="flex justify-center justify-around">
+                <button class="btn">
+                    Life
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                    <span>1</span>
+                </button>
+                <button class="btn">
+                    Score
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                      </svg>
+                      
+                    <span>1</span>
+                </button>
+            </div>
+        </section>
+        <!-- Score Section -->
+        <section id="score-section" class="hidden">
+            <div class="flex flex-col justify-center items-center min-h-screen border-2 space-y-4">
+                <h2 class="text-white font-extrabold text-[50px]">
+                    <span>Score : </span>
+                    <span>14</span>
+                </h2>
+                <button class="btn">Play again</button>
+                <p class="text-white">Practice will make you pro</p>
+            </div>
+        </section>
+    </main>
+    <script src="script/uitlity.js"></script>
+    <script src="script/alpha-clash.js"></script>
 </body>
+
 </html>
