@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpha Clash</title>
+    <!-- tailwind and daisy ui cdn -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.1/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles/style.css">
@@ -33,7 +34,7 @@
             <div class="flex flex-col justify-center items-center min-h-screen space-y-3">
                 <h2 class="text-white font-anton font-normal text-[140px]">ALPHABET CLASH</h2>
                 <p class="text-white pb-7">Unleash your keyboard kungfu : Press "Enter" to play</p>
-                <button onclick="play()" id="home-btn" class="bg-white text-black btn">Play Now</button>
+                <button keyup="play()" id="home-btn" class="bg-white text-black btn">Play Now</button>
             </div>
         </section>
         <!-- playground section -->
@@ -42,13 +43,14 @@
             <div class="flex flex-col justify-center items-center">
                 <div class="artboard artboard-horizontal phone-6 border-[20px] border-[#010313CC] bg-[#ffffffB3] mt-10">
                     <div class="flex justify-center">
-                        <p class="bg-[#010313CC]  text-white inline-block px-6 pb-4 rounded-b-xl">Don't watch keyboard  while playing...</p>
+                        <p class="bg-[#010313CC]  text-white inline-block px-6 pb-4 rounded-b-xl">Don't watch keyboard
+                            while playing...</p>
                     </div>
                     <div class="flex justify-center items-center h-full">
                         <p id="display" class="text-black text-9xl font-bold uppercase">Y</p>
                     </div>
                 </div>
-                
+
             </div>
             <!-- keyboard-->
             <div class="">
@@ -65,15 +67,15 @@
                     <kbd id="p" class="kbd">p</kbd>
                 </div>
                 <div class="flex justify-center gap-1 my-1 w-full">
-                    <kbd id= "a" class="kbd">a</kbd>
-                    <kbd id= "s" class="kbd">s</kbd>
-                    <kbd id= "d" class="kbd">d</kbd>
-                    <kbd id= "f" class="kbd">f</kbd>
-                    <kbd id= "g" class="kbd">g</kbd>
-                    <kbd id= "h" class="kbd">h</kbd>
-                    <kbd id= "j" class="kbd">j</kbd>
-                    <kbd id= "k" class="kbd">k</kbd>
-                    <kbd id= "l" class="kbd">l</kbd>
+                    <kbd id="a" class="kbd">a</kbd>
+                    <kbd id="s" class="kbd">s</kbd>
+                    <kbd id="d" class="kbd">d</kbd>
+                    <kbd id="f" class="kbd">f</kbd>
+                    <kbd id="g" class="kbd">g</kbd>
+                    <kbd id="h" class="kbd">h</kbd>
+                    <kbd id="j" class="kbd">j</kbd>
+                    <kbd id="k" class="kbd">k</kbd>
+                    <kbd id="l" class="kbd">l</kbd>
                 </div>
                 <div class="flex justify-center gap-1 my-1 w-full">
                     <kbd id="z" class="kbd">z</kbd>
@@ -99,10 +101,12 @@
                 </button>
                 <button class="btn">
                     Score
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                      </svg>
-                      
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+
                     <span>1</span>
                 </button>
             </div>
