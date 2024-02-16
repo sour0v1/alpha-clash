@@ -33,3 +33,17 @@ function getRandomAlphabet() {
     const randomAlphabet = arrayOfAlphabet[indexNumber];
     return randomAlphabet;
 }
+
+// get value of element by id
+function getElementValueById(elementId) {
+    const getElement = document.getElementById(elementId);
+    const getValue = getElement.innerText;
+    const value = parseInt(getValue);
+    return value;
+}
+
+// set value of element by id
+function setValueById(elementId, value) {
+    const getElement = document.getElementById(elementId);
+    getElement.innerText = value;
+}
