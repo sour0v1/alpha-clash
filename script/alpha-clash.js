@@ -31,3 +31,26 @@ function enterGame() {
     continueGame();
 
 }
+
+
+function keyboardBtnPress(event){
+    const playerPress = event.key;
+    console.log('pressed key - ', playerPress);
+    // expected key 
+    const getDisplayAlphabetElement = document.getElementById('display');
+    const getDisplayAlphabet = getDisplayAlphabetElement.innerText;
+    const getDisplayAlphabetToLowercase = getDisplayAlphabet.toLowerCase();
+    console.log('expected key - ', getDisplayAlphabetToLowercase);
+
+    // check right or wrong
+    if(playerPress === getDisplayAlphabetToLowercase){
+        console.log('Yeah..You got 1 point!');
+        removeBackgroundColor(playerPress);
+        continueGame();
+    }
+    else{
+        console.log('Opps..You pressed wrong key.You lose 1 life');
+    }
+}
+// capture keyboard button press
+document.addEventListener('keyup', keyboardBtnPress);
