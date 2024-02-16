@@ -45,12 +45,47 @@ function keyboardBtnPress(event){
     // check right or wrong
     if(playerPress === getDisplayAlphabetToLowercase){
         console.log('Yeah..You got 1 point!');
+        // update score
+        // 1. get the current score
+        const getCurrentScoreElement = document.getElementById('score');
+        const getCurrentScoreText = getCurrentScoreElement.innerText;
+        const currentScore = parseInt(getCurrentScoreText); 
+        // 2. increase the score 1
+       const newScore = currentScore + 1;
+        // 3. update the score
+        getCurrentScoreElement.innerText = newScore;
+
+        // start new round
         removeBackgroundColor(playerPress);
         continueGame();
+        
     }
     else{
-        console.log('Opps..You pressed wrong key.You lose 1 life');
+        const getLifeElement = document.getElementById('life');
+        const getLifeElementText = getLifeElement.innerText;
+        const getLife = parseInt(getLifeElementText);
+
+        const decreaseLife = getLife - 1;
+        
+        getLifeElement.innerText = decreaseLife;
+
+        if(getLife === 1){
+            const getFinalScoreSection = document.getElementById('score-section');
+            const getPlaygroundSection = document.getElementById('playground-section');
+            getFinalScoreSection.classList.remove('hidden');
+            getPlaygroundSection.classList.add('hidden');
+        }
     }
+    
 }
 // capture keyboard button press
 document.addEventListener('keyup', keyboardBtnPress);
+
+// display score
+/* function replay(){
+    const getFinalScoreSection = document.getElementById('score-section');
+    const getHomeSection = document.getElementById('home-section');
+    const newScore = keyboardBtnPress();
+    console.log('uuuuu', newScore)
+
+} */
